@@ -1,0 +1,69 @@
+html, body {
+
+    margin: 0px;
+    height: 100%;
+    font-family: 'Kanit';
+    color: white;
+    background-color: aliceblue;
+}
+
+.header {
+    
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color: #494A4F;
+    margin-bottom: 20px;
+}
+
+.content {
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button {
+
+    font-size: 30px;
+    height: 125px;
+    width: 175px;
+    background-color: #494A4F;
+    border-radius: 15px;
+    border: none;
+    margin-top: 20px;    
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+
+    background-color: #5a5b61;
+}
+
+#container {
+
+    display: flex;
+    flex-wrap: wrap;
+    height: 800px;
+    width: 800px;
+    gap: 5px;
+    background-color: black;
+    border: 5px solid black;
+}
+
+.gridElement {
+
+    background-color: white;
+    user-select: none;
+}
+
+.gridElement:hover {
+
+    background-color: black;
+}
