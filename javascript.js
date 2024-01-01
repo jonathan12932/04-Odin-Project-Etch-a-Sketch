@@ -1,10 +1,15 @@
 const grid = document.getElementById("container");
 let isDrawing = false;
 
-console.log(grid);
-
 createGrid(20);
 
+let color = "black";
+
+document.getElementById("colorButton").addEventListener("input", function(event) {
+
+    color = event.target.value;
+    document.getElementById("colorButton").style.backgroundColor = color;
+});
 
 function createGrid(size) {
 
@@ -17,16 +22,16 @@ function createGrid(size) {
         toAdd.style.height = (spaceWithoutGap / size) + "px"; 
         toAdd.style.width = (spaceWithoutGap / size) + "px"; 
 
-        toAdd.addEventListener('mouseover', (event) => {
+        toAdd.addEventListener('mouseover', () => {
 
             if(isDrawing)
-                toAdd.style.backgroundColor = "black";
+                toAdd.style.backgroundColor = color;
         });    
 
-        toAdd.addEventListener('mousedown', (event) => {
+        toAdd.addEventListener('mousedown', () => {
 
             if(isDrawing)
-                toAdd.style.backgroundColor = "black";
+                toAdd.style.backgroundColor = color;
         });    
 
         grid.appendChild(toAdd);
