@@ -4,11 +4,22 @@ let isDrawing = false;
 createGrid(20);
 
 let color = "black";
+let erase = false;
 
 document.getElementById("colorButton").addEventListener("input", function(event) {
 
     color = event.target.value;
     document.getElementById("colorButton").style.backgroundColor = color;
+});
+
+document.getElementById("eraserButton").addEventListener("click", () => {
+
+    erase = true;
+});
+
+document.getElementById("drawButton").addEventListener("click", () => {
+
+    erase = false;
 });
 
 function createGrid(size) {
@@ -25,13 +36,10 @@ function createGrid(size) {
         toAdd.addEventListener('mouseover', () => {
 
             if(isDrawing)
-                toAdd.style.backgroundColor = color;
-        });    
-
-        toAdd.addEventListener('mousedown', () => {
-
-            if(isDrawing)
-                toAdd.style.backgroundColor = color;
+                if(erase) 
+                    toAdd.style.backgroundColor = "white";
+                else
+                    toAdd.style.backgroundColor = color;
         });    
 
         grid.appendChild(toAdd);
